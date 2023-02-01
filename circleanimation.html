@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Animation</title>
+    <link rel="icon" href="fav.png">
+    <style>
+
+
+
+body{background-color:#050210;
+  margin: auto 600px;
+}
+
+
+#main-container{
+    position: relative;
+   
+    
+    
+}
+
+.rotating-ball{
+width: 300px;
+height: 300px;
+background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+border-radius: 50%;
+position: absolute;
+margin-top: 150px;
+animation: animacija 0.9s linear infinite;}
+
+.rotating-ball span{
+position: absolute;
+width: 300px;
+height: 300px;
+border-radius: 50%;
+background:linear-gradient(#fb5dad, #55fb9f, #b97aff);
+animation: animacija 0.9s linear infinite;
+}
+
+.rotating-ball span:nth-child(1){filter: blur(50px);}
+.rotating-ball span:nth-child(2){filter: blur(20px);}
+.rotating-ball span:nth-child(3){filter: blur(0);}
+.rotating-ball span:nth-child(4){filter: blur(0);}
+
+@keyframes animacija {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}}
+
+.rotating-ball::after{
+content: "";
+ width: 300px;
+ height: 300px;
+ background-color: #050210;
+ border-radius: 50%;
+ position: absolute;
+ transform: scale(0.8, 0.8);}
+
+ .concentric{
+    width: 300px;
+ height: 300px;
+ background-color: hsl(253, 78%, 6%);
+ border-radius: 50%;
+ position: absolute;
+ top: 150px;
+ bottom: 0;
+ right: 30px;
+ left: 0;
+ transform: scale(0.1,0.1);
+ animation: druga 1.5s linear infinite;}
+
+ @keyframes druga {
+    0%{transform: scale(0.1,0,1);}
+    100%{transform: scale(0.8,0.8);}}
+    </style>
+</head>
+<body>
+
+
+    <div id="main-container">
+<div class="rotating-ball">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="concentric">
+
+
+</div>
+</div>
+
+
+
+
+
+
+    
+</body>
+</html>
